@@ -1,0 +1,25 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "Add a `README.md` to your repository describing the project. Here are some resources for creating your `README.md`. Here are some resources to help you along the way:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsdinger/bamazon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vsdinger/bamazon/issues"
+  },
+  "homepage": "https://github.com/vsdinger/bamazon#readme",
+  "dependencies": {
+    "inquirer": "^6.3.1",
+    "prompt": "^1.0.0",
+    "requirer": "0.0.4"
+  }
+}
