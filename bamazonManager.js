@@ -1,5 +1,18 @@
 // ### Challenge #2: Manager View (Next Level)
-
+var mysql = require('mysql');
+var inquirer = require('inquirer');
+// MySQL connection parameters
+var connection = mysql.createConnection({
+    host: "localhost",
+    port: 3306,
+  
+    // Your username
+    user: "root",
+  
+    // Your password
+    password: "password",
+	database: 'Bamazon'
+});
 // * Create a new Node application called `bamazonManager.js`. Running this application will:
 
 //   * List a set of menu options:
