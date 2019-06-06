@@ -11,16 +11,28 @@ CREATE TABLE products (
 	stock_quantity INTEGER(11) NOT NULL,
 	PRIMARY KEY (item_id));
 -- 3. The products table should have each of the following columns:
-
---    * item_id (unique id for each product)
-
---    * product_name (Name of product)
-
---    * department_name
-
---    * price (cost to customer)
-
---    * stock_quantity (how much of the product is available in stores)
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES  
+		('Purina Bella', 'Pet', 15.75, 100),
+		('Alcatel Phone Case', 'Phone Accessory', 8.99, 127),
+		('Trash Bags', 'Garden', 5.99, 250),
+		('Made for the Middle', 'Books', 20.00, 100),
+		('Paint & Plant', 'Garden', 10.35, 800),
+		('Bannana Chips', 'Grocery', 3.20, 700),
+		('Watermelon Chips', 'Grocery', 3.50, 267),
+		('Triple Antiobiotic Cream', 'Pharmacy', 5.50, 200),
+		('BioFreeze Pain Relief', 'Pharmacy', 10.00, 476),
+		('Baby Bottles', 'Children', 14.99, 575),
+		('Pampers Baby Wipes', 'Children', 1.50, 423),
+		('Yoga Mat', 'Sports', 12.75, 150),
+		('5lb Dumb bell', 'Sports', 10.99, 89),
+		('Future Dallas Fan', 'Clothing', 26.55, 120),
+		('Nike Shorts', 'Clothing', 17.88, 250),
+		('Purina Beyond', 'Pet', 10.25, 157),
+		('Dog Leash and Harness', 'Pet', 35.99, 163),
+		('Ibuprophen', 'Pharmacy', 4.95, 389),
+		('Band Aid', 'Pharmacy', 3.25, 550),
+		('OLAY Moisture Ribbons Plus', 'Grocery', 3.25, 432);
 
 -- 4. Populate this database with around 10 different products. (i.e. Insert "mock" data rows into this database and table).
 
