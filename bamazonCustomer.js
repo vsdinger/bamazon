@@ -5,46 +5,51 @@ var inquirer = require('inquirer');
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
-  
-    // Your username
     user: "root",
-  
-    // Your password
     password: "password",
 	database: 'Bamazon'
 });
 
-// 2. Then create a Table inside of that database called `products`.
+// 5. BAMZON Customer.
+// integers for their inputs
+function validateInput(value) {
+	var integer = Number.isInteger(parseFloat(value));
+	var sign = Math.sign(value);
 
-// 3. The products table should have each of the following columns:
-
-//    * item_id (unique id for each product)
-
-//    * product_name (Name of product)
-
-//    * department_name
-
-//    * price (cost to customer)
-
-//    * stock_quantity (how much of the product is available in stores)
-
-// 4. Populate this database with around 10 different products. (i.e. Insert "mock" data rows into this database and table).
-
-// 5. Then create a Node application called `bamazonCustomer.js`. Running this application will first display all of the items available for sale. Include the ids, names, and prices of products for sale.
-
+	if (integer && (sign === 1)) {
+		return true;
+	} else {
+		return 'Please enter a whole non-zero number.';
+	}
+}
+// promptUserPurchase will prompt the user for the item/quantity they would like to purchase
+function promptUserPurchase() {
+// console.log('___ENTER promptUserPurchase___');
 // 6. The app should then prompt users with two messages.
-
-//    * The first should ask them the ID of the product they would like to buy.
+//  * The first should ask them the ID of the product they would like to buy.
 //    * The second message should ask how many units of the product they would like to buy.
 
 // 7. Once the customer has placed the order, your application should check if your store has enough of the product to meet the customer's request.
+// Prompt the user to select an item
+	inquirer.prompt([
+		{
+			type: 'input',
+			name: 'item_id',
+			message: 'Please enter the Item ID which you would like to purchase.',
+			validate: validateInput,
+			filter: Number
+		},
+		{
+			type: 'input',
+			name: 'quantity',
+			message: 'How many do you need?',
+			validate: validateInput,
+			filter: Number
+		}
+	]).then(function(input) {// console.log('Customer has selected: \n    item_id = '  + input.item_id + '\n    quantity = ' + input.quantity);
 
-//    * If not, the app should log a phrase like `Insufficient quantity!`, and then prevent the order from going through.
 
-// 8. However, if your store _does_ have enough of the product, you should fulfill the customer's order.
-//    * This means updating the SQL database to reflect the remaining quantity.
-//    * Once the update goes through, show the customer the total cost of their purchase.
 
-// - - -
-
-// * If this activity took you between 8-10 hours, then you've put enough time into this assignment. Feel free to stop here -- unless you want to take on the next challenge.
+    
+// Run the application logic
+runBamazon();
