@@ -5,14 +5,16 @@ var inquirer = require('inquirer');
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
-  
-    // Your username
     user: "root",
-  
-    // Your password
     password: "password",
 	database: 'Bamazon'
 });
+
+// promptManagerAction will present menu options to the manager and trigger appropriate logic
+function promptManagerAction() {
+	console.log('___ENTER promptManagerAction___');
+
+
 // * Create a new Node application called `bamazonManager.js`. Running this application will:
 
 //   * List a set of menu options:
